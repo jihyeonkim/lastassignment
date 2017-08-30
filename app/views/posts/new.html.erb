@@ -1,0 +1,19 @@
+<br><center>
+<h1>Guess What Book is it</h1>
+<br>
+
+
+ <% if user_signed_in? %>
+   <h3>Let me guess the book you read!</h3>
+   <br>
+   <%= render 'form' %>
+   <%= link_to 'Sign Out', destroy_user_session_path, method:'delete'%>
+ <% else %>
+   <h3>Before share your inspritation,</h3>
+   <h3>Please Sign in </h3>
+   <%= link_to 'Sign In', new_user_session_path %>
+   <%= link_to 'Sign Up', new_user_registration_path %>
+   <%= link_to 'Back', posts_path %>   
+ <% end %>
+
+</center>

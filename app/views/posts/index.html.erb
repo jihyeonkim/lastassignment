@@ -1,0 +1,36 @@
+<body style="background-color: #ffff33;">
+<br>
+<center><p id="notice"><%= notice %></p>
+
+<h1>Guess What Book is it</h1>
+<h3>Guess What Book I read</h3>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td><%= post.title %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+<%= link_to 'Let me guess the book you read!', new_post_path %>
+
+
+</center>
+</body>

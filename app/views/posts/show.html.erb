@@ -1,0 +1,28 @@
+<body style="background-color: #ffff33;">
+<br>
+<center>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<h1>Guess What Book is it</h1>
+<br>
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<%=form_tag '/comment/create' method:'post' do %>
+<p>
+  <%= text_area_tag 'content', nil, style: "width:33%" %>
+</p>
+  <%= submit_tag 'submit!' %>
+<% end %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+</center>
+</body>
